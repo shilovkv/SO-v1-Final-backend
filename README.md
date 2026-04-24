@@ -1,1 +1,3 @@
-# SO-v1-Final-backend
+# ASO v1.1 Final
+
+Avito Vacancy Responses discovery + sync.

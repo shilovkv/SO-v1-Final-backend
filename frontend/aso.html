@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><title>ASO v1.1</title><style>body{font-family:Arial;background:#0f172a;color:white;padding:20px}button{padding:12px 18px;margin:8px;border:0;border-radius:8px;cursor:pointer;font-weight:bold}.box{background:#1e293b;padding:20px;margin-top:20px;border-radius:12px}pre{white-space:pre-wrap}</style></head><body>
+<h1>🚀 ASO v1.1 Command Center</h1>
+<button onclick="call('/aso/state')">📊 State</button>
+<button onclick="call('/integrations/avito/accounts')">🟢 Avito Accounts</button>
+<button onclick="call('/integrations/avito/test-token','POST')">🔑 Test Tokens</button>
+<button onclick="call('/integrations/avito/discover-vacancy-endpoints?limit=5&max_accounts=3','POST')">🧭 Discover Vacancy Endpoints</button>
+<button onclick="call('/integrations/avito/sync-vacancy-responses?limit=50&max_accounts=61','POST')">📥 Sync Vacancy Responses</button>
+<button onclick="call('/companyos/run-autonomous-cycle','POST')">🚀 Company OS</button>
+<div class="box"><h3>Output:</h3><pre id="output">Готово.</pre></div>
+<script>
+const BASE="https://aso-v1-final-backend-production.up.railway.app";
+async function call(path,method="GET"){try{let r=await fetch(BASE+path,{method});let d=await r.json();document.getElementById("output").innerText=JSON.stringify(d,null,2)}catch(e){document.getElementById("output").innerText=JSON.stringify({error:e.toString()},null,2)}}
+</script></body></html>
